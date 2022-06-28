@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { getPokemon } from './services/FetchUtils';
 
 function App() {
+
+  const [pokemon, setPokemon] = useState([]);
+
+  const [pokeQuery, setPokeQuery] = useState('');
+
+  useEffect(() => {
+    load();
+  }, []);
+
+  async function load() {
+    const { results } = await getPokemon(pokeQuery);
+    setPokemon(results);
+  }
+  
+
+  async function pokeHandleSearch(e) {
+    e.preventDefault();
+    load();
+  } 
+
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form className='pokemon' onSubmit={pokeHandleSearch}>
+        <h2>POKEMON</h2>
+        <input onChange={e => setPokeQuery(e.target.value)}/>
+        <button></button>
+      </form>
     </div>
   );
 }
-
 export default App;
