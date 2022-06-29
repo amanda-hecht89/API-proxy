@@ -10,7 +10,7 @@ const headers = {
 
 exports.handler = async (event, context) => {
   try {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
     const data = await response.json();
     const json = JSON.stringify(data);
     
