@@ -9,11 +9,11 @@ export default function YelpSearch() {
   useEffect(() => {
     load();
   }, []);
-}
 
-async function load() {
-  const { results } = await getYelp(yelpQuery);
-  setYelp(results);
+  async function load() {
+    const { businesses } = await getYelp(yelpQuery);
+    setYelp(businesses);
+  }
 
   async function loadYelpSearch() {
     const money = await getYelp(yelpQuery);
