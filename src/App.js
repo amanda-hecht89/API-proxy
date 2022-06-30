@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import PokemonSearch from './PokemonSearch';
+import YelpSearch from './YelpSearch';
 
 
 function App() {
@@ -8,7 +9,12 @@ function App() {
 
   return (
     <div className="App">
-      <PokemonSearch/>
+      <div>
+        <PokemonSearch/>
+      </div>
+      <div>
+        <YelpSearch/>
+      </div>
     </div>
   );
 }
