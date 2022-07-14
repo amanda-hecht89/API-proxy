@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import './App.css';
 import PokemonSearch from './PokemonSearch';
 import YelpSearch from './YelpSearch';

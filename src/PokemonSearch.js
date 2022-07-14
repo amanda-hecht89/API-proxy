@@ -9,7 +9,7 @@ export default function PokemonSearch() {
 
   useEffect(() => {
     load();
-  }, []);
+  }, []);// eslint-disable-line
 
   async function load() {
     const { results } = await getPokemon(pokeQuery);

@@ -8,7 +8,7 @@ export default function YelpSearch() {
 
   useEffect(() => {
     load();
-  }, []);
+  }, []); // eslint-disable-line
 
   async function load() {
     const { businesses } = await getYelp(yelpQuery);
